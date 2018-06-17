@@ -11,8 +11,10 @@ The forum thread for these extensions can be found [here](https://forum.allegori
 
 ## Current Extensions
 
+Documentation and a full list of current extensions can be found [here](docs/index.md).
+
 ### Code
-- SubstanceParameter - Easy selection of Substance inputs via the inspector.
+- [SubstanceParameter](docs/code/substanceparameter.md) - Easy selection of Substance inputs via the inspector.
 
 ### Tools
-- Export Substance Textures Window - Export Substance textures as standalone files.
+- [Export Substance Textures Window](docs/tools/exportsubstancetextureswindow.md) - Export Substance textures as standalone files.
