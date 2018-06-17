@@ -1,0 +1,12 @@
+{
+    "name": "Substance.Extensions.Editor",
+    "references": [
+        "Substance.Extensions"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
