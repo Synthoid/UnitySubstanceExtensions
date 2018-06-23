@@ -5,6 +5,20 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# Substance Plugin Files
+Assets/Plugins/Substance*
+Assets/Plugins/Substance.Engine.bundle*
+Assets/Plugins/Substance.meta
+Assets/Plugins/Substance.Engine.bundle.meta
+Assets/Plugins/libsubstance_sse2_blend.bundle
+Assets/Plugins/libsubstance_sse2_blend.bundle.meta
+Assets/Plugins/Substance.Engine.dll
+Assets/Plugins/Substance.Engine.dll.meta
+Assets/Plugins/Substance.Game.dll
+Assets/Plugins/Substance.Game.dll.meta
+Assets/Plugins/substance_sse2_blend.dll
+Assets/Plugins/substance_sse2_blend.dll.meta
+
 # Visual Studio cache directory
 .vs/
 
