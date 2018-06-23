@@ -9,8 +9,10 @@ Repository for tools and code extending the Substance plugin introduced in Unity
 ## Forum Thread
 The forum thread for these extensions can be found [here](https://forum.allegorithmic.com/index.php/topic,24110.0.html).
 
-## Current Extensions
+## Installing The Plugin
+To use these extensions, the Substance in Unity plugin must be installed. The most recent version can be downloaded from the plugin's [Unity asset store page](https://assetstore.unity.com/packages/tools/utilities/substance-in-unity-110555).
 
+## Current Extensions
 Documentation and a full list of current extensions can be found [here](docs/index.md).
 
 ### Code
