@@ -73,7 +73,7 @@ ScriptedImporter:
       bHighQuality: 0
       textureWidth: 1024
       textureHeight: 1024
-      textureFormat: 2
+      textureFormat: 0
       loadBehavior: 0
     - label: Standalone
       bOverride: 0

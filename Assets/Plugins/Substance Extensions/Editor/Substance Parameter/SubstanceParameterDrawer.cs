@@ -5,87 +5,19 @@ using Substance.Game;
 namespace Substance.Editor
 {
     [CustomPropertyDrawer(typeof(SubstanceParameter))]
-    public class SubstanceParameterDrawer : PropertyDrawer
+    public class SubstanceParameterDrawer : AssetReferenceDrawer
     {
-        /// <summary>
-        /// The width of the graph reference field when a graph is referenced.
-        /// </summary>
-        private const float ASSET_WIDTH = 35f;
-        /// <summary>
-        /// The space between the graph reference field and the target field when a graph is referenced.
-        /// </summary>
-        private const float ASSET_BUFFER = 5f;
-        
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        protected override string AssetField
         {
-            Rect labelRect = new Rect(position);
-
-            labelRect.width = (EditorGUIUtility.labelWidth - (EditorGUI.indentLevel * 15f));
-
-            EditorGUI.LabelField(labelRect, label);
-
-            SerializedProperty graphProp = property.FindPropertyRelative("graph");
-
-            if (graphProp.objectReferenceInstanceIDValue != 0)
-            {
-                //Context command to show/hide more of the graph reference field.
-                //Activated by right clicking on the label.
-                Event current = Event.current;
-
-                if (labelRect.Contains(current.mousePosition) && current.type == EventType.ContextClick)
-                {
-                    GenericMenu menu = new GenericMenu();
-
-                    if (!graphProp.isExpanded) menu.AddItem(new GUIContent("Show Asset Field"), false, delegate () { ShowAssetCallback(graphProp); });
-                    else menu.AddItem(new GUIContent("Hide Asset Field"), false, delegate () { ShowAssetCallback(graphProp); });
-
-                    menu.ShowAsContext();
-
-                    current.Use();
-                }
-            }
-
-            labelRect.x += labelRect.width;
-            labelRect.width = (position.width - labelRect.width) + (graphProp.isExpanded ? (EditorGUI.indentLevel * 15f) : 0f);
-
-            if (graphProp.objectReferenceInstanceIDValue == 0)
-            {
-                EditorGUI.PropertyField(labelRect, graphProp, GUIContent.none);
-            }
-            else
-            {
-                Rect fieldRect = new Rect(labelRect);
-
-                if (!graphProp.isExpanded)
-                {
-                    fieldRect.width -= (ASSET_WIDTH + ASSET_BUFFER);
-                }
-                else
-                {
-                    fieldRect.width *= 0.5f;
-                }
-
-                DrawTargetField(fieldRect, property.FindPropertyRelative("parameter"), graphProp);
-
-                fieldRect.x += fieldRect.width + ASSET_BUFFER;
-                fieldRect.x -= (EditorGUI.indentLevel * 15f);
-
-                if (!graphProp.isExpanded)
-                {
-                    fieldRect.width = ASSET_WIDTH;
-                    fieldRect.width += (EditorGUI.indentLevel * 15f);
-                }
-                else
-                {
-                    fieldRect.width -= ASSET_BUFFER;
-                }
-
-                EditorGUI.PropertyField(fieldRect, graphProp, GUIContent.none);
-            }
+            get { return "graph"; }
         }
 
+        protected override string TargetField
+        {
+            get { return "parameter"; }
+        }
 
-        protected virtual void DrawTargetField(Rect position, SerializedProperty property, SerializedProperty assetProperty)
+        protected override void DrawTargetField(Rect position, SerializedProperty property, SerializedProperty assetProperty)
         {
             SubstanceGraph graph = assetProperty.objectReferenceValue as SubstanceGraph;
 
@@ -115,12 +47,6 @@ namespace Substance.Editor
             {
                 property.stringValue = inputs[index].name;
             }
-        }
-
-
-        protected virtual void ShowAssetCallback(SerializedProperty property)
-        {
-            property.isExpanded = !property.isExpanded;
         }
     }
 }
