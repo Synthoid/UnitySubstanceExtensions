@@ -69,7 +69,7 @@ ScriptedImporter:
     targetSettingList:
     - label: Default
       bOverride: 0
-      bLockRatio: 1
+      bLockRatio: 0
       bHighQuality: 0
       textureWidth: 1024
       textureHeight: 1024

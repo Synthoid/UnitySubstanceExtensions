@@ -11,5 +11,9 @@
         /// The parameter being targeted.
         /// </summary>
         public string parameter;
+        /// <summary>
+        /// The value type of the parameter.
+        /// </summary>
+        public SubstanceInputType type;
     }
 }

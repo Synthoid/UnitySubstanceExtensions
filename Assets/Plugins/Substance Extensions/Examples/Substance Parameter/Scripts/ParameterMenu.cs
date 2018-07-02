@@ -77,6 +77,8 @@ namespace Substance.Examples
             saturationSlider.onValueChanged.AddListener(OnSaturationChanged);
 
             refreshButton.onClick.AddListener(OnRefreshClicked);
+
+            Debug.Log(string.Format("{0} - {1}\n{2} - {3}\n{4} - {5}", luminosityParam.parameter, luminosityParam.type, hueParam.parameter, hueParam.type, saturationParam.parameter, saturationParam.type));
         }
     }
 }

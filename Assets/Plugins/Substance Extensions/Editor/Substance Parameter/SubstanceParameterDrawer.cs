@@ -20,17 +20,18 @@ namespace Substance.Editor
         protected override void DrawTargetField(Rect position, SerializedProperty property, SerializedProperty assetProperty)
         {
             SubstanceGraph graph = assetProperty.objectReferenceValue as SubstanceGraph;
-
+            SerializedProperty typeProperty = property.GetSiblingProperty("type");
+            
             int inputCount = NativeFunctions.cppGetNumInputs(graph.nativeHandle);
             Globals.Input[] inputs = Globals.GetNativeInputs(graph, inputCount);
             GUIContent[] labels = new GUIContent[inputCount];
             
             for (int i = 0; i < inputCount; i++)
             {
-                labels[i] = new GUIContent(string.Format("{0}{1} ({2})", (string.IsNullOrEmpty(inputs[i].group) ? "" : inputs[i].group + "/"), inputs[i].label, inputs[i].name));
+                labels[i] = new GUIContent(string.Format("{0}{1} ({2} - {3})", (string.IsNullOrEmpty(inputs[i].group) ? "" : inputs[i].group + "/"), inputs[i].label, inputs[i].name, (SubstanceInputType)inputs[i].substanceInputType), inputs[i].name);
             }
 
-            int index = 0;
+            int index = -1;
 
             for (int i = 0; i < inputCount; i++)
             {
@@ -41,11 +42,19 @@ namespace Substance.Editor
                 }
             }
 
+            if(index < 0 && inputCount > 0)
+            {
+                index = 0;
+                property.stringValue = inputs[index].name;
+                typeProperty.intValue = inputs[index].substanceInputType;
+            }
+
             EditorGUI.BeginChangeCheck();
             index = EditorGUI.Popup(position, index, labels);
             if(EditorGUI.EndChangeCheck())
             {
                 property.stringValue = inputs[index].name;
+                typeProperty.intValue = inputs[index].substanceInputType;
             }
         }
     }

@@ -7,5 +7,10 @@ namespace Substance.Examples
 	{
         [SerializeField]
         private SubstanceOutput output = new SubstanceOutput();
-	}
+
+        private void Start()
+        {
+            Debug.Log(output.outputName);
+        }
+    }
 }
