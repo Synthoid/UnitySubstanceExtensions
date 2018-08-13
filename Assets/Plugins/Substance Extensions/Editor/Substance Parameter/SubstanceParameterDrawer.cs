@@ -23,7 +23,7 @@ namespace Substance.Editor
             SerializedProperty typeProperty = property.GetSiblingProperty("type");
             
             int inputCount = NativeFunctions.cppGetNumInputs(graph.nativeHandle);
-            Globals.Input[] inputs = Globals.GetNativeInputs(graph, inputCount);
+            NativeTypes.Input[] inputs = NativeTypes.GetNativeInputs(graph, inputCount);
             GUIContent[] labels = new GUIContent[inputCount];
             
             for (int i = 0; i < inputCount; i++)
