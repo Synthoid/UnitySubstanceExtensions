@@ -17,6 +17,7 @@ Documentation and a full list of current extensions can be found [here](docs/ind
 
 ### Code
 - [SubstanceParameter](docs/code/substanceparameter.md) - Easy selection of Substance inputs via the inspector.
+- [SubstanceOutput](docs/code/substanceoutput.md) - Easy selection of Substance outputs via the inspector.
 
 ### Tools
 - [Export Substance Textures Window](docs/tools/exportsubstancetextureswindow.md) - Export Substance textures as standalone files.
