@@ -6,6 +6,8 @@
 Assets/AssetStoreTools*
 
 # Substance Plugin Files
+Assets/Allegorithmic/*
+Assets/Allegorithmic.meta
 Assets/Plugins/Substance/*
 Assets/Plugins/Substance.Engine.bundle*
 Assets/Plugins/Substance.meta

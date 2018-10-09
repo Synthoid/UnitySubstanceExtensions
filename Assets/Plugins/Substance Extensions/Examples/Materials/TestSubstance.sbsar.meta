@@ -6,9 +6,9 @@ ScriptedImporter:
     400000: TestSubstance/TestSubstance/Transform
     2100000: mat.Test Substance
     2300000: TestSubstance/TestSubstance/MeshRenderer
-    2800000: Test Substance_Base Color
-    2800002: Test Substance_Normal
-    2800004: Test Substance_Metallic
+    2800006: Test Substance_baseColor
+    2800008: Test Substance_normal
+    2800010: Test Substance_metallic
     3300000: TestSubstance/TestSubstance/MeshFilter
     11400000: sbsar
     11400002: graph0
@@ -19,56 +19,73 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  version: 13
   mGraphInstanceData:
   - graphLabel: Test Substance
+    prototypeName: 
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://TestSubstance\" label=\"\" >\n </sbspreset>\n"
     shaderName: Standard
-    outputNames: Base Color,Normal,Metallic
+    outputNames: baseColor,normal,metallic
     texturePackingList:
-    - outputName: Base Color
-      alphaSource: Base Color
-    - outputName: Normal
-      alphaSource: Normal
-    - outputName: Roughness
-      alphaSource: Roughness
-    - outputName: Metallic
-      alphaSource: Smoothness
+    - outputName: baseColor
+      alphaSource: baseColor
+    - outputName: normal
+      alphaSource: normal
+    - outputName: roughness
+      alphaSource: roughness
+    - outputName: metallic
+      alphaSource: smoothness
+    textureParameters:
+    - textureName: Test Substance_roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Test Substance_baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Test Substance_normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Test Substance_metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
     colorSpaceList:
-    - outputName: Base Color
+    - outputName: baseColor
       bLinear: 0
-    - outputName: Normal
+    - outputName: normal
       bLinear: 1
-    - outputName: Roughness
+    - outputName: roughness
       bLinear: 1
-    - outputName: Metallic
+    - outputName: metallic
       bLinear: 1
     inputTextureMap: []
     targetSettingList:
     - label: Default
-      bOverride: 0
       bLockRatio: 1
       bHighQuality: 0
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
-      loadBehavior: 0
+      bGenerateOnLoad: 1
     - label: Standalone
-      bOverride: 0
       bLockRatio: 1
       bHighQuality: 0
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
-      loadBehavior: 0
+      bGenerateOnLoad: 0
     - label: iPhone
-      bOverride: 0
       bLockRatio: 1
       bHighQuality: 0
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
-      loadBehavior: 0
-    material: {instanceID: 0}
+      bGenerateOnLoad: 0
+    material: {fileID: 2100000, guid: 0b04f05c16c97f44187345ac09ee38bf, type: 3}
+    generatedTextures: []

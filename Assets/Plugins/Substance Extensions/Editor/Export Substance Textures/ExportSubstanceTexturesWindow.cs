@@ -138,11 +138,15 @@ namespace Substance.Editor
 
         private void ExportTextures()
         {
-            if(InspectorSubstanceBase.mModified)
+            /*if(InspectorSubstanceBase.mModified)
             {
                 EditorUtility.DisplayDialog("Substance graph has changes", Selection.activeObject != null ? string.Format("Substance graph [{0}] has active changes. Please apply or revert changes to export textures.", Selection.activeObject.name) : "Substance graph has active changes. Please apply or revert changes to export textures.", "OK");
                 return;
             }
+
+            SubstanceGraph graph = null;
+
+            graph.GetGeneratedTextures();*/
 
             string folderPath = EditorUtility.OpenFolderPanel("Export Textures", Application.dataPath, "");
 

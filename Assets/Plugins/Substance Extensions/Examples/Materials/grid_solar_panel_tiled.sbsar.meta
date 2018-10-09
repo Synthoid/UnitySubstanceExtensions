@@ -6,10 +6,10 @@ ScriptedImporter:
     400000: grid_solar_panel_tiled/grid_solar_panel_tiled/Transform
     2100000: mat.Solar Panel Grid
     2300000: grid_solar_panel_tiled/grid_solar_panel_tiled/MeshRenderer
-    2800000: Solar Panel Grid_Base Color
-    2800002: Solar Panel Grid_Normal
-    2800004: Solar Panel Grid_Metallic
-    2800006: Solar Panel Grid_Height
+    2800008: Solar Panel Grid_baseColor
+    2800010: Solar Panel Grid_normal
+    2800012: Solar Panel Grid_metallic
+    2800014: Solar Panel Grid_height
     3300000: grid_solar_panel_tiled/grid_solar_panel_tiled/MeshFilter
     11400000: sbsar
     11400002: graph0
@@ -20,8 +20,10 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  version: 13
   mGraphInstanceData:
   - graphLabel: Solar Panel Grid
+    prototypeName: 
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
@@ -30,65 +32,96 @@ ScriptedImporter:
       \ <presetinput identifier=\"grid_tiling\" uid=\"2969193936\" type=\"4\" value=\"10\"
       />\n </sbspreset>\n"
     shaderName: Standard
-    outputNames: Base Color,Normal,Metallic,Height
+    outputNames: baseColor,normal,metallic,height
     texturePackingList:
-    - outputName: Diffuse
-      alphaSource: Diffuse
-    - outputName: Base Color
-      alphaSource: Base Color
-    - outputName: Normal
-      alphaSource: Normal
-    - outputName: Specular
-      alphaSource: Specular
-    - outputName: Glossiness
-      alphaSource: Glossiness
-    - outputName: Roughness
-      alphaSource: Roughness
-    - outputName: Metallic
-      alphaSource: Smoothness
-    - outputName: Height
-      alphaSource: Height
+    - outputName: diffuse
+      alphaSource: diffuse
+    - outputName: baseColor
+      alphaSource: baseColor
+    - outputName: normal
+      alphaSource: normal
+    - outputName: specular
+      alphaSource: specular
+    - outputName: glossiness
+      alphaSource: glossiness
+    - outputName: roughness
+      alphaSource: roughness
+    - outputName: metallic
+      alphaSource: smoothness
+    - outputName: height
+      alphaSource: height
+    textureParameters:
+    - textureName: Solar Panel Grid_glossiness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid_diffuse
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid_baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid_normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid_specular
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid_roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid_metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid_height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
     colorSpaceList:
-    - outputName: Diffuse
+    - outputName: diffuse
       bLinear: 0
-    - outputName: Base Color
+    - outputName: baseColor
       bLinear: 0
-    - outputName: Normal
+    - outputName: normal
       bLinear: 1
-    - outputName: Specular
+    - outputName: specular
       bLinear: 0
-    - outputName: Glossiness
+    - outputName: glossiness
       bLinear: 1
-    - outputName: Roughness
+    - outputName: roughness
       bLinear: 1
-    - outputName: Metallic
+    - outputName: metallic
       bLinear: 1
-    - outputName: Height
+    - outputName: height
       bLinear: 1
     inputTextureMap: []
     targetSettingList:
     - label: Default
-      bOverride: 0
       bLockRatio: 0
       bHighQuality: 0
       textureWidth: 1024
       textureHeight: 1024
       textureFormat: 0
-      loadBehavior: 0
+      bGenerateOnLoad: 1
     - label: Standalone
-      bOverride: 0
       bLockRatio: 1
       bHighQuality: 0
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
-      loadBehavior: 0
+      bGenerateOnLoad: 0
     - label: iPhone
-      bOverride: 0
       bLockRatio: 1
       bHighQuality: 0
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
-      loadBehavior: 0
+      bGenerateOnLoad: 0
     material: {fileID: 2100000, guid: 2ddac2369adc73148b56b6987705930a, type: 3}
+    generatedTextures: []
