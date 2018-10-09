@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using Substance.Game;
 
-namespace Substance.Examples
+namespace SubstanceExtensions.Examples
 {
     public class ParameterMenu : MonoBehaviour
     {

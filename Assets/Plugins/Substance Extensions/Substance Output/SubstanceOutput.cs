@@ -1,4 +1,6 @@
-﻿namespace Substance.Game
+﻿using Substance.Game;
+
+namespace SubstanceExtensions
 {
     /// <summary>
     /// Convenience class used to access the outputs of a <see cref="SubstanceGraph"/>.

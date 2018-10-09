@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-namespace Substance.Editor
+namespace SubstanceExtensionsEditor
 {
     /// <summary>
     /// Class containing extension methods for the <see cref="SerializedProperty"/> class.

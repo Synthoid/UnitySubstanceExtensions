@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Substance.Game;
 
-namespace Substance.Game
+namespace SubstanceExtensions
 {
     /// <summary>
     /// Class containing extension methods for the <see cref="SubstanceGraph"/> class.

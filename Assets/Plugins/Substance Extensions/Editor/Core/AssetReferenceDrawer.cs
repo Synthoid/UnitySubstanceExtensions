@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-namespace Substance.Editor
+namespace SubstanceExtensionsEditor
 {
     /// <summary>
     /// Base class for drawing asset dependent inspector fields.

@@ -3,12 +3,13 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using Substance.Game;
+using SubstanceExtensions;
 
-namespace Substance.Editor
+namespace SubstanceExtensionsEditor
 {
     public class ExportSubstanceTexturesWindow : EditorWindow
     {
-        private Game.Substance substance;
+        private Substance.Game.Substance substance;
         
         private List<string> graphNames = new List<string>();
         private List<bool> graphExpansions = new List<bool>();
@@ -29,7 +30,7 @@ namespace Substance.Editor
         private void OnGUI()
         {
             EditorGUI.BeginChangeCheck();
-            substance = (Game.Substance)EditorGUILayout.ObjectField(SubstanceLabel, substance, typeof(Game.Substance), false);
+            substance = (Substance.Game.Substance)EditorGUILayout.ObjectField(SubstanceLabel, substance, typeof(Substance.Game.Substance), false);
             if(EditorGUI.EndChangeCheck())
             {
                 RegenerateTextures();

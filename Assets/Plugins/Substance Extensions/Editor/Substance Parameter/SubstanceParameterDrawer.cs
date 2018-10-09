@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using Substance.Game;
+using SubstanceExtensions;
 
-namespace Substance.Editor
+namespace SubstanceExtensionsEditor
 {
     [CustomPropertyDrawer(typeof(SubstanceParameter))]
     public class SubstanceParameterDrawer : AssetReferenceDrawer

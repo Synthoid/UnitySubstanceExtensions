@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Substance.Examples
+namespace SubstanceExtensions.Examples
 {
     public class RotateTransform : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-﻿namespace Substance.Game
+﻿namespace SubstanceExtensions
 {
     /// <summary>
     /// Wrapper enum for the Global.Input.substanceInputType int value.

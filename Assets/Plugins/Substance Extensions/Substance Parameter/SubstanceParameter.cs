@@ -1,5 +1,10 @@
-﻿namespace Substance.Game
+﻿using Substance.Game;
+
+namespace SubstanceExtensions
 {
+    /// <summary>
+    /// Struct used to conveniently access substance parameters via the inspector.
+    /// </summary>
     [System.Serializable]
     public struct SubstanceParameter
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Substance.Game
+namespace SubstanceExtensions
 {
     public static class TextureExtensions
     {

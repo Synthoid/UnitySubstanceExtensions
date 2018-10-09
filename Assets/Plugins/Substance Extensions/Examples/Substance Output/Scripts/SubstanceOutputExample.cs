@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Substance.Game;
 
-namespace Substance.Examples
+namespace SubstanceExtensions.Examples
 {
 	public class SubstanceOutputExample : MonoBehaviour
 	{

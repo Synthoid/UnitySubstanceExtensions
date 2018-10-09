@@ -1,4 +1,4 @@
-﻿namespace Substance.Game
+﻿namespace SubstanceExtensions
 {
     /// <summary>
     /// Wrapper enum for the int values expected for setting substance output size via code.
