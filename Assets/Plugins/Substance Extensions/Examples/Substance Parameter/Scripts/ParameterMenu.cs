@@ -6,26 +6,19 @@ namespace SubstanceExtensions.Examples
 {
     public class ParameterMenu : MonoBehaviour
     {
-        [SerializeField]
-        [Tooltip("The Substance graph being adjusted.")]
+        [SerializeField, Tooltip("The Substance graph being adjusted.")]
         private SubstanceGraph graph;
-        [SerializeField]
-        [Tooltip("Slider to control substance luminosity parameter.")]
+        [SerializeField, Tooltip("Slider to control substance luminosity parameter.")]
         private Slider luminositySlider;
-        [SerializeField]
-        [Tooltip("Slider to control substance hue shift parameter.")]
+        [SerializeField, Tooltip("Slider to control substance hue shift parameter.")]
         private Slider hueSlider;
-        [SerializeField]
-        [Tooltip("Slider to control substance saturation parameter.")]
+        [SerializeField, Tooltip("Slider to control substance saturation parameter.")]
         private Slider saturationSlider;
-        [SerializeField]
-        [Tooltip("Label showing the value for the luminosity parameter.")]
+        [SerializeField, Tooltip("Label showing the value for the luminosity parameter.")]
         private Text luminosityValueLabel;
-        [SerializeField]
-        [Tooltip("Label showing the value for the hue shift parameter.")]
+        [SerializeField, Tooltip("Label showing the value for the hue shift parameter.")]
         private Text hueValueLabel;
-        [SerializeField]
-        [Tooltip("Label showing the value for the saturation parameter.")]
+        [SerializeField, Tooltip("Label showing the value for the saturation parameter.")]
         private Text saturationValueLabel;
         [SerializeField]
         private Button refreshButton;

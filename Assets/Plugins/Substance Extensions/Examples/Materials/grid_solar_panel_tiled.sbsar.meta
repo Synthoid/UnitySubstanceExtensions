@@ -2,25 +2,19 @@ fileFormatVersion: 2
 guid: 2ddac2369adc73148b56b6987705930a
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: grid_solar_panel_tiled/grid_solar_panel_tiled
-    400000: grid_solar_panel_tiled/grid_solar_panel_tiled/Transform
-    2100000: mat.Solar Panel Grid
-    2300000: grid_solar_panel_tiled/grid_solar_panel_tiled/MeshRenderer
-    2800008: Solar Panel Grid_baseColor
-    2800010: Solar Panel Grid_normal
-    2800012: Solar Panel Grid_metallic
-    2800014: Solar Panel Grid_height
-    3300000: grid_solar_panel_tiled/grid_solar_panel_tiled/MeshFilter
+    2100002: Solar Panel Grid
+    2800000: Solar Panel Grid - baseColor
+    2800002: Solar Panel Grid - normal
+    2800004: Solar Panel Grid - metallic
+    2800006: Solar Panel Grid - height
     11400000: sbsar
     11400002: graph0
-    13500000: grid_solar_panel_tiled/grid_solar_panel_tiled/SphereCollider
-    100100000: grid_solar_panel_tiled
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
-  version: 13
+  version: 17
   mGraphInstanceData:
   - graphLabel: Solar Panel Grid
     prototypeName: 
@@ -83,6 +77,102 @@ ScriptedImporter:
       wrapMode: 0
       filterMode: 1
       aniso: 1
+    - textureName: Solar Panel Grid - glossiness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid - diffuse
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid - specular
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - glossiness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - diffuse
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - specular
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid2 - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - glossiness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - diffuse
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - specular
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Solar Panel Grid3 - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
     colorSpaceList:
     - outputName: diffuse
       bLinear: 0
@@ -103,25 +193,22 @@ ScriptedImporter:
     inputTextureMap: []
     targetSettingList:
     - label: Default
-      bLockRatio: 0
-      bHighQuality: 0
+      bLockRatio: 1
       textureWidth: 1024
       textureHeight: 1024
       textureFormat: 0
       bGenerateOnLoad: 1
     - label: Standalone
       bLockRatio: 1
-      bHighQuality: 0
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
       bGenerateOnLoad: 0
     - label: iPhone
       bLockRatio: 1
-      bHighQuality: 0
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
       bGenerateOnLoad: 0
-    material: {fileID: 2100000, guid: 2ddac2369adc73148b56b6987705930a, type: 3}
+    material: {instanceID: 0}
     generatedTextures: []
