@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 0b04f05c16c97f44187345ac09ee38bf
 ScriptedImporter:
   fileIDToRecycleName:
-    2100002: Test Substance
+    2100000: Test Substance
     2800000: Test Substance - baseColor
     2800002: Test Substance - normal
     2800004: Test Substance - metallic
@@ -16,7 +16,7 @@ ScriptedImporter:
   version: 17
   mGraphInstanceData:
   - graphLabel: Test Substance
-    prototypeName: 
+    prototypeName: Test Substance
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
@@ -33,22 +33,6 @@ ScriptedImporter:
     - outputName: metallic
       alphaSource: smoothness
     textureParameters:
-    - textureName: Test Substance_roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Test Substance_baseColor
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Test Substance_normal
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Test Substance_metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
     - textureName: Test Substance - roughness
       wrapMode: 0
       filterMode: 1
@@ -76,23 +60,11 @@ ScriptedImporter:
       bLinear: 1
     inputTextureMap: []
     targetSettingList:
-    - label: Default
+    - label: 
       bLockRatio: 1
       textureWidth: 256
       textureHeight: 256
       textureFormat: 0
       bGenerateOnLoad: 1
-    - label: Standalone
-      bLockRatio: 1
-      textureWidth: 256
-      textureHeight: 256
-      textureFormat: 0
-      bGenerateOnLoad: 0
-    - label: iPhone
-      bLockRatio: 1
-      textureWidth: 256
-      textureHeight: 256
-      textureFormat: 0
-      bGenerateOnLoad: 0
     material: {instanceID: 0}
     generatedTextures: []

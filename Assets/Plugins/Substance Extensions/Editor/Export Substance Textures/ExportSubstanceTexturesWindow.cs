@@ -13,6 +13,7 @@ namespace SubstanceExtensionsEditor
         
         private List<string> graphNames = new List<string>();
         private List<bool> graphExpansions = new List<bool>();
+        private List<bool> graphExportExpansions = new List<bool>();
         private List<Vector2> graphScrolls = new List<Vector2>();
         private List<List<string>> textureNames = new List<List<string>>();
         private List<List<Texture>> textures = new List<List<Texture>>();
@@ -20,7 +21,7 @@ namespace SubstanceExtensionsEditor
         private static GUIContent SubstanceLabel = new GUIContent("Substance", "The substance to export textures from.");
         private static GUIContent ButtonLabel = new GUIContent("Export Textures", "Export the textures associated with the target substance as standalone textures.");
         
-        [MenuItem("Substance/Export Substance Textures")]
+        [MenuItem("Substance/Extensions/Export Substance Textures")]
         public static void ShowWindow()
         {
             GetWindow<ExportSubstanceTexturesWindow>("Export Sbs Tex", true).Show();
@@ -56,6 +57,27 @@ namespace SubstanceExtensionsEditor
                 ExportTextures();
             }
             if (!GUI.enabled) GUI.enabled = cachedGUI;
+
+            if(substance != null)
+            {
+                EditorGUILayout.Space();
+
+                for(int i=0; i < textureNames.Count; i++)
+                {
+                    graphExportExpansions[i] = EditorGUILayout.Foldout(graphExportExpansions[i], new GUIContent(graphNames[i], string.Format("Export individual textures for the [{0}] graph.", graphNames[i])), true);
+
+                    if(graphExportExpansions[i])
+                    {
+                        for(int j=0; j < textureNames[i].Count; j++)
+                        {
+                            if (GUILayout.Button(new GUIContent(textureNames[i][j], string.Format("Export the [{0}] texture from the [{1}] graph.", textureNames[i][j], graphNames[i]))))
+                            {
+                                ExportTexture(textureNames[i][j], i, j);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -102,6 +124,7 @@ namespace SubstanceExtensionsEditor
         {
             graphNames.Clear();
             graphExpansions.Clear();
+            graphExportExpansions.Clear();
             graphScrolls.Clear();
             textureNames.Clear();
             textures.Clear();
@@ -112,6 +135,7 @@ namespace SubstanceExtensionsEditor
                 {
                     graphNames.Add(substance.graphs[i].name);
                     graphExpansions.Add(true);
+                    graphExportExpansions.Add(true);
                     graphScrolls.Add(Vector2.zero);
                     textureNames.Add(new List<string>());
                     textures.Add(new List<Texture>());
@@ -139,16 +163,6 @@ namespace SubstanceExtensionsEditor
 
         private void ExportTextures()
         {
-            /*if(InspectorSubstanceBase.mModified)
-            {
-                EditorUtility.DisplayDialog("Substance graph has changes", Selection.activeObject != null ? string.Format("Substance graph [{0}] has active changes. Please apply or revert changes to export textures.", Selection.activeObject.name) : "Substance graph has active changes. Please apply or revert changes to export textures.", "OK");
-                return;
-            }
-
-            SubstanceGraph graph = null;
-
-            graph.GetGeneratedTextures();*/
-
             string folderPath = EditorUtility.OpenFolderPanel("Export Textures", Application.dataPath, "");
 
             if(!string.IsNullOrEmpty(folderPath))
@@ -200,6 +214,37 @@ namespace SubstanceExtensionsEditor
 
                     Selection.objects = objects;
                 }
+            }
+        }
+
+
+        private void ExportTexture(string texName, int graphIndex, int texIndex)
+        {
+            string folderPath = EditorUtility.SaveFilePanel("Export Textures", Application.dataPath, texName, "png");
+
+            if (!string.IsNullOrEmpty(folderPath))
+            {
+                if (textures[graphIndex][texIndex] == null) return;
+
+                byte[] bytes = new byte[0];
+
+                if (((Texture2D)textures[graphIndex][texIndex]).IsCompressed())
+                {
+                    Texture2D newTex = new Texture2D(textures[graphIndex][texIndex].width, textures[graphIndex][texIndex].height, TextureFormat.ARGB32, false);
+                    Color32[] colors = ((Texture2D)textures[graphIndex][texIndex]).GetPixels32();
+                    newTex.SetPixels32(colors);
+                    newTex.Apply();
+
+                    bytes = ImageConversion.EncodeToPNG(newTex);
+                }
+                else
+                {
+                    bytes = ImageConversion.EncodeToPNG((Texture2D)textures[graphIndex][texIndex]);
+                }
+                
+                File.WriteAllBytes(folderPath, bytes);
+
+                CustomEditorUtility.SelectOrReveal(folderPath, false, true);
             }
         }
     }
