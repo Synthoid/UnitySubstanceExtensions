@@ -70,7 +70,10 @@ namespace SubstanceExtensionsEditor
                     {
                         for(int j=0; j < textureNames[i].Count; j++)
                         {
-                            if (GUILayout.Button(new GUIContent(textureNames[i][j], string.Format("Export the [{0}] texture from the [{1}] graph.", textureNames[i][j], graphNames[i]))))
+                            Rect buttonRect = EditorGUILayout.GetControlRect(GUILayout.Height(EditorGUIUtility.singleLineHeight + (EditorGUIUtility.standardVerticalSpacing * 1f)));
+                            buttonRect.Set(buttonRect.x + EditorGUIUtility.singleLineHeight, buttonRect.y, buttonRect.width - EditorGUIUtility.singleLineHeight, buttonRect.height);
+
+                            if (GUI.Button(buttonRect, new GUIContent(textureNames[i][j], string.Format("Export the [{0}] texture from the [{1}] graph.", textureNames[i][j], graphNames[i]))))
                             {
                                 ExportTexture(textureNames[i][j], i, j);
                             }
@@ -139,22 +142,13 @@ namespace SubstanceExtensionsEditor
                     graphScrolls.Add(Vector2.zero);
                     textureNames.Add(new List<string>());
                     textures.Add(new List<Texture>());
+                    
+                    List<Texture2D> tempTextures = substance.graphs[i].GetGeneratedTextures();
 
-                    Material graphMat = substance.graphs[i].material;
-                    int propCount = ShaderUtil.GetPropertyCount(graphMat.shader);
-
-                    for (int j = 0; j < propCount; j++)
+                    for(int j=0; j < tempTextures.Count; j++)
                     {
-                        if(ShaderUtil.GetPropertyType(graphMat.shader, j) == ShaderUtil.ShaderPropertyType.TexEnv)
-                        {
-                            string texName = ShaderUtil.GetPropertyName(graphMat.shader, j);
-                            Texture tex = graphMat.GetTexture(texName);
-
-                            if (tex == null) continue;
-
-                            textureNames[i].Add(texName);
-                            textures[i].Add(tex);
-                        }
+                        textureNames[i].Add(tempTextures[j].name.LastIndexOf(' ') < 0 ? tempTextures[j].name : tempTextures[j].name.Substring(tempTextures[j].name.LastIndexOf(' ')+1));
+                        textures[i].Add(tempTextures[j]);
                     }
                 }
             }
@@ -220,9 +214,9 @@ namespace SubstanceExtensionsEditor
 
         private void ExportTexture(string texName, int graphIndex, int texIndex)
         {
-            string folderPath = EditorUtility.SaveFilePanel("Export Textures", Application.dataPath, texName, "png");
+            string path = EditorUtility.SaveFilePanel("Export Textures", Application.dataPath, graphNames[graphIndex] + " - " + texName, "png");
 
-            if (!string.IsNullOrEmpty(folderPath))
+            if (!string.IsNullOrEmpty(path))
             {
                 if (textures[graphIndex][texIndex] == null) return;
 
@@ -242,9 +236,9 @@ namespace SubstanceExtensionsEditor
                     bytes = ImageConversion.EncodeToPNG((Texture2D)textures[graphIndex][texIndex]);
                 }
                 
-                File.WriteAllBytes(folderPath, bytes);
+                File.WriteAllBytes(path, bytes);
 
-                CustomEditorUtility.SelectOrReveal(folderPath, false, true);
+                CustomEditorUtility.SelectOrReveal(path, false, true);
             }
         }
     }
