@@ -13,7 +13,7 @@ namespace SubstanceExtensionsEditor
         /// <param name="refresh">If true, will reimport the asset before selecting it. This has no effect if the path is outside the project.</param>
         public static void SelectOrReveal(string path, bool relative=false, bool refresh=false)
         {
-            if (path.StartsWith(Application.dataPath) || relative)
+            if (relative || path.StartsWith(Application.dataPath))
             {
                 //Select the generated file if it was created in the project.
                 if (!relative) path = path.Replace(Application.dataPath, "Assets/");
