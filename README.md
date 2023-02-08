@@ -1,6 +1,10 @@
 # Unity Substance Extensions
 Repository for tools and code extending the Substance plugin introduced in Unity 2018.1.
 
+### This repo has been archived.
+
+### A new repo with support for the latest Substance 3D for Unity plugin can be found [here](https://github.com/Synthoid/substance-for-unity-extensions).
+
 ## Goals
 1. Extend the base plugin to make Substance workflows faster and easier.
 2. Perform tasks directly inside Unity when possible.
